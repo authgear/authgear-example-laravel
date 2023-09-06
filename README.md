@@ -16,7 +16,16 @@ AUTHGEAR_APP_CLIENT_ID = ""
 AUTHGEAR_APP_CLIENT_SECRET = ""
 AUTHGEAR_APP_REDIRECT_URI = ""
 ```
+To run the app on you local mechine, run the following commands:
 
+```
+php artisan migrate
+```
+and
+
+```
+php artisan serve
+```
 
 For a more detailed step-by-step guide on how to use Authgear, check out this post:
 [https://docs.authgear.com/get-started/regular-web-app](https://docs.authgear.com/get-started/regular-web-app)
