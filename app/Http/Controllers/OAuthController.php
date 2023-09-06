@@ -53,10 +53,12 @@ class OAuthController extends Controller {
             if (isset($accessToken)) {
                 $resourceOwner = $this->provider->getResourceOwner($accessToken);
                 $userInfo = $resourceOwner->toArray();
-                
+
                 //check if user already registered
                 $oldUser = User::query()->whereEmail($userInfo['email'])->first();
                 if (!empty($oldUser)) {
+                    $oldUser->oauth_uid = $userInfo['sub'];
+                    $oldUser->save();
                     Auth::guard('web')->login($oldUser);
                 } else {
                     $user = User::create([
@@ -70,6 +72,7 @@ class OAuthController extends Controller {
                 
                 // Redirect user to a protected route
                 return redirect('/dashboard');
+                
             }
         } 
     }
