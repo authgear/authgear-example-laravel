@@ -64,6 +64,7 @@ class OAuthController extends Controller {
                     $user = User::create([
                         'name' => $userInfo['email'],
                         'email' => $userInfo['email'],
+                        'oauth_uid' => $userInfo['sub'],
                         'password' => Hash::make($userInfo['sub'] ."-". $userInfo['email'])
                         ]);
 

@@ -11,7 +11,8 @@
         <p>This demo app shows you how to add user authentication to your Laravel app using Authgear</p>
         <p>Checkout <a href="https://docs.authgear.com">docs.authgear.com</a> to learn more about adding Authgear to your apps.</p>
         
-        <p><a href="/oauth/login">Login</a></p>
+        <p>Click on Login to Get Started!</p>
+        <p><a href="/login">Login</a></p>
     </div>
 </body>
 </html>
